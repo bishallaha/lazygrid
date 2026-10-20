@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LazyGrid
 
-## Getting Started
+**One grid for every digital asset.** LazyGrid is a general-purpose marketplace where anyone can
+sell game assets, art, designs, source code, AI agents, packages, and bundles, all in one place.
 
-First, run the development server:
+[![CI](https://github.com/bishallaha/lazygrid/actions/workflows/ci.yml/badge.svg)](https://github.com/bishallaha/lazygrid/actions/workflows/ci.yml)
+
+> **Status:** early development. Nothing here is live yet. See the [roadmap](docs/ROADMAP.md).
+
+## Why LazyGrid
+
+Creators currently spread their work across many niche marketplaces, and buyers have to search
+across all of them. LazyGrid is a single, low-friction place to list and buy any digital asset.
+
+## Planned features
+
+- Fast, simple listing flow for any asset type
+- Secure paid downloads (time-limited signed links, never public files)
+- Commission-based payments with automatic seller splits
+- Seller dashboards and buyer purchase history
+- Accessible, keyboard-friendly, responsive UI
+
+## Tech stack
+
+| Layer                   | Choice                           |
+| ----------------------- | -------------------------------- |
+| Language                | TypeScript                       |
+| Framework               | Next.js (App Router), React      |
+| Styling                 | Tailwind CSS                     |
+| Database, auth, storage | Supabase (Postgres)              |
+| Payments                | Razorpay Route (India first)     |
+| Hosting                 | Vercel                           |
+| Quality                 | ESLint, Prettier, GitHub Actions |
+
+## Getting started
+
+Requires Node.js 22 or newer.
 
 ```bash
+git clone https://github.com/bishallaha/lazygrid.git
+cd lazygrid
+npm install
+cp .env.example .env.local   # then fill in values
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command             | What it does                                 |
+| ------------------- | -------------------------------------------- |
+| `npm run dev`       | Start the dev server                         |
+| `npm run build`     | Production build                             |
+| `npm run lint`      | Run ESLint                                   |
+| `npm run typecheck` | Run the TypeScript compiler without emitting |
+| `npm run format`    | Format code with Prettier                    |
 
-## Learn More
+## Workflow
 
-To learn more about Next.js, take a look at the following resources:
+`main` is always deployable. All changes go through short-lived branches
+(`feat/…`, `fix/…`, `chore/…`, `docs/…`) and pull requests that must pass CI.
+Commits follow the [Conventional Commits](https://www.conventionalcommits.org/) style.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copyright (c) 2026 Bishal Laha. All rights reserved. Source is viewable for evaluation only;
+see [LICENSE](LICENSE).
